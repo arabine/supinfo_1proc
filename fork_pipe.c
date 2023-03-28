@@ -27,7 +27,7 @@ int main()
 		fprintf(stderr, "Pipe Failed");
 		return 1;
 	}
-
+	puts("Entre un mot: ");
 	scanf("%s", input_str);
 	p = fork();
 
