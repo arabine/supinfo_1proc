@@ -31,11 +31,11 @@ void * philosopher(void * num)
 {
 	int phil=*(int *)num;
 
-	sem_wait(&room); // try to comment this line to provoke a deadlock
+//	sem_wait(&room); // try to comment this line to provoke a deadlock
 	printf("\n---> Philosopher %d has entered room",phil);
 	sem_wait(&chopstick[phil]);
 	
-	sleep(2);
+	sleep(2); // articifical delay to provoke a deadlock if 
 	sem_wait(&chopstick[(phil+1)%5]);
 
 	eat(phil);
